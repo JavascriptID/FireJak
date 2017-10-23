@@ -1,5 +1,5 @@
 # FireJak
-Aplikasi Daftar Pos Pemadam Kebakaran di Jakarta built with VueJS
+:fire_engine: Aplikasi Daftar Pos Pemadam Kebakaran di Jakarta built with VueJS
 
 [![License](https://img.shields.io/github/license/mazipan/FireJak.svg?maxAge=3600)](https://github.com/mazipan/FireJak) 
 [![Github Issue](https://img.shields.io/github/issues/mazipan/FireJak.svg?maxAge=3600)](https://github.com/mazipan/FireJak/issues) 
@@ -29,6 +29,15 @@ https://api.jakarta.go.id/
 + Folder [static](https://github.com/mazipan/explore-github/tree/master/static) is for external js, css and public image
 + Folder [test](https://github.com/mazipan/explore-github/tree/master/test/unit) is used for unit test all `Vue Component`
 + Folder [www](https://github.com/mazipan/explore-github/tree/master/www) is setup for `pwa` need, like `manifest.json`, `sw.js`, etc
+
+
+### Development
++ Checkout Code : `git checkout https://github.com/mazipan/FireJak.git`
++ Install dependency : `npm install` or `yarn install`
++ Run in local : `npm run dev`
++ Run unit test : `npm run unit`
++ Run ES linting : `npm run lint` 
++ Build for production : `npm run dist` then checkout branch `gh-pages` and copy folder `dist` to `root` directory
 
 
 **Hope will usefull for you all.**

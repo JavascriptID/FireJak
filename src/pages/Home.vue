@@ -14,7 +14,8 @@
     <ul class="pemadam">
       <li v-for="pos in filteredList" class="pos">
         <div class="left">
-          <i data-v-4ed7b5a9="" aria-hidden="true" class="fa fa-fire-extinguisher"></i>          
+          <img class="icon" 
+               v-lazy="'/FireJak/static/images/Red_Fire_Engine-256x256.png'">        
         </div>
         <div class="right">
           <div class="title" 
@@ -25,10 +26,24 @@
           </div>
           <div class="kel"
                v-html="highlightText(pos.KELURAHAN, searchText)">
-          </div>          
+          </div>  
+          <div class="see-map__wrapper">
+             <a 
+              :href="'https://www.google.com/maps/search/?api=1&query=' + 
+              pos.LAT + ',' + pos.LNG" 
+              :alt="pos.POS_PEMADAM" 
+              :title="pos.POS_PEMADAM" 
+              target="_blank" 
+              class="see-map">
+              <i class="fa fa-map-marker"></i> 
+              Lihat Lokasi
+             </a>         
+          </div>         
         </div>
+ 
       </li>
     </ul>
+
     
   </div>
 </template>
@@ -82,15 +97,23 @@ export default {
   list-style: none;
 }
 .pos{
-  padding: 10px;
+  padding: 1em 0;
   display: table;
+  border: 1px solid #ddd;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(32, 33, 39, 0.12);
+  margin: .5em 0;
 }
 .left{
   display: table-cell;
   vertical-align: middle;
+  width: 120px;
+  text-align: center;
 
-  i{
-    font-size: 34px;
+  .icon{
+    width: 50px;
     margin-right: 10px;
   }
 }
@@ -116,6 +139,20 @@ export default {
     outline: none;
     border: 1px solid #ffb347;
     border-radius: .5em;
+  }
+}
+
+.see-map{
+  line-height: 2;
+  font-size: 14px;
+  color: #0096D9;
+  background-color: #eee;
+  padding: .5em;
+  text-decoration: none;
+  border-radius: .25em;
+
+  &__wrapper{
+    margin-top: .5em;
   }
 }
 </style>
